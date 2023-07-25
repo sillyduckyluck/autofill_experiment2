@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './styles.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <>
+    <img src="uni_logo_eng.png" alt="Description of the image" />
+    <div className="container">
+      <div className="prompt">
+        <h2>Question:</h2>
+        <p>Previous studies show that students prefer people with high levels of openness to experience as their roommates.</p>
+        <p>This is because open people are interested in new things, they are motivated to learn about new ideas and acquire new knowledge,
+          which means that living with them never gets boring. Further, research has found that people with high openness to experience are
+          often very intelligent and creative, which makes them good study buddies. </p>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+          We want to test whether students really prefer open people as their roommates. For the purpose of this study, we, therefore, ask you
+          to portray yourself a person who is very open to experience. Start by writing a few things about yourself, like your age, your hometown,
+          and what you want to major in. Continue your text by answering the following questions: </p>
+        <p>(a) how would you describe your friendships and what do you like to do with friends for fun?</p>
+        <p>(b) what types of activities do you enjoy doing with family members?</p>
+        <p>(c) what extracurricular activities are you involved in?</p>
+        <p>(d) what is the most important thing you learned in high school?</p>
+        <p>Think of experiences in both your past and present that are consistent with being open to experience and rely on those examples when answering the questions.</p>
+        <p>Please now write about 200 words about yourself as an open person.</p>
+      </div>
+      <div className="response">
+        <h2>Your Answer:</h2>
+        <textarea
+          rows="3"
+          placeholder="Type your answer here"
+        ></textarea>
+      </div>
     </div>
+    </>
   );
-}
+};
 
 export default App;

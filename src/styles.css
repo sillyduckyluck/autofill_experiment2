@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  height: 90vh;
+  padding: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.prompt {
+  flex: 1;
+  margin-bottom: 0px; /* Optional: Add some spacing between the boxes */
+}
+
+.response {
+  flex: 2;
+}
+
+/* Add the CSS for the textarea */
+textarea {
+  width: 100%;
+  height: 80%;
+  
+  box-sizing: border-box; /* Consider padding and border in the width and height */
+}
+
+p {
+  font-size: .9vw;
+}
+
+h2 {
+  font-size: 1vw;
+}
