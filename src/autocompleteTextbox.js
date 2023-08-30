@@ -21,7 +21,7 @@ function AutocompleteTextbox() {
     // Replace with your actual ChatGPT API call
 
     const prompt = "Imagine you are an autocomplete feature tailored to provide suggestions with extraverted connotations. Your goal is to assist the user in completing their sentences by offering contextually relevant endings that highlight their openness to experience in a social and outgoing manner. As you generate suggestions, lean towards choices that emphasize interactions, social events, group activities, and enthusiastic participation. Encourage the user to express their extroverted qualities and engage in experiences that involve others. An autocomplete feature finishes the sentece without suggesting what came before, so ONLY FINISH THE SENTENCE, without repeating the part I am about to tell you. How would you COMPLETE the following sentence? (DO NOT REPEAT THE BEGINNING)"
-    const apiKey = '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';
+    const apiKey = process.env.GPT_KEY;
     const endpoint = 'https://api.openai.com/v1/chat/completions';
 
     console.log(prompt)
