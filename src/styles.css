@@ -42,3 +42,22 @@ p {
 h2 {
   font-size: 1vw;
 }
+
+.input-container {
+  position: relative;
+  height: 25vh;
+}
+/*
+.autocomplete-suggestion {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: lightgrey;
+  padding: 5px;
+  border: 1px solid grey;
+  border-top: none;
+  width: 100%;
+  /* Add the CSS for the textarea 
+  display: ${({ suggestions }) => (suggestions.length > 0 ? 'block' : 'none')};
+}
+*/

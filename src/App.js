@@ -1,6 +1,7 @@
 import React from 'react';
 import './styles.css';
-
+import './autocompleteTextbox'
+import AutocompleteTextbox from './autocompleteTextbox';
 const App = () => {
   return (
     <>
@@ -25,12 +26,12 @@ const App = () => {
       </div>
       <div className="response">
         <h2>Your Answer:</h2>
-        <textarea
-          rows="3"
-          placeholder="Type your answer here"
-        ></textarea>
+        <AutocompleteTextbox>
+          
+        </AutocompleteTextbox>
       </div>
     </div>
+
     </>
   );
 };
