@@ -8,8 +8,15 @@ function AutocompleteTextbox() {
   const [displaySuggestions, setDisplaySuggestions] = useState(false); // Track whether to display suggestions
   const inputRef = useRef(null);
   const timeoutIdRef = useRef(null);
+  const [wordCount, setWordCount] = useState(0);
+
   //const openai = new openAI();
 
+  const countWords = (input) => {
+    const words = input.split(' ').filter((word) => word !== ''); // Split the input by spaces and remove empty strings
+    setWordCount(words.length);
+  };
+  
   const queryGPT2 = async (input) => {
     // Simulate an API call to ChatGPT
     // You can replace this with an actual API call to ChatGPT
@@ -77,7 +84,8 @@ function AutocompleteTextbox() {
     setInputValue(newValue);
     suggestionsRef.current = []; // Clear suggestions on every keystroke
     setDisplaySuggestions(false); // Hide suggestions on input change
-
+    countWords(newValue);
+    
     clearTimeout(timeoutIdRef.current);
     if (newValue.endsWith(" ")) {
       timeoutIdRef.current = setTimeout(() => {
@@ -158,6 +166,7 @@ function AutocompleteTextbox() {
           onChange={handleInputChange}
           onKeyDown={handleKeyDown} /* Attach the handleKeyDown function */
         />
+        <div className="word-count">Word Count: {wordCount}</div>
         {displaySuggestions && suggestionsRef.current.length > 0 && (
           <div className="autocomplete-suggestion">
             {suggestionsRef.current.map((suggestion, index) => (
