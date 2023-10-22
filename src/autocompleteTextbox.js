@@ -19,8 +19,24 @@ function AutocompleteTextbox() {
   const queryGPT = async (input) => {
 
     // Replace with your actual ChatGPT API call
+    const userAnswers = JSON.parse(localStorage.getItem("userResponses"))
+    console.log(userAnswers)
+//{"age":"12","gender":"123","hobbies":"sdf","funWithFriends":"dsf"}
+    const age = userAnswers["age"]
+    const gender = userAnswers["gender"]
+    const hobbies = userAnswers["hobbies"]
+    const funWithFriends = userAnswers["funWithFriends"]
+    console.log(age)
+    console.log(gender)
+    console.log(hobbies)
+    console.log(funWithFriends)
 
-    const prompt = "Imagine you are an autocomplete feature tailored to provide suggestions with extraverted connotations. Your goal is to assist the user in completing their sentences by offering contextually relevant endings that highlight their openness to experience in a social and outgoing manner. As you generate suggestions, lean towards choices that emphasize interactions, social events, group activities, and enthusiastic participation. Encourage the user to express their extroverted qualities and engage in experiences that involve others. An autocomplete feature finishes the sentece without suggesting what came before, so ONLY FINISH THE SENTENCE, without repeating the part I am about to tell you. How would you COMPLETE the following sentence? (DO NOT REPEAT THE BEGINNING)"
+
+    //const prompt = "Imagine you are an autocomplete feature tailored to provide suggestions with extraverted connotations. Your goal is to assist the user in completing their sentences by offering contextually relevant endings that highlight their openness to experience in a social and outgoing manner. As you generate suggestions, lean towards choices that emphasize interactions, social events, group activities, and enthusiastic participation. Encourage the user to express their extroverted qualities and engage in experiences that involve others. An autocomplete feature finishes the sentece without suggesting what came before, so ONLY FINISH THE SENTENCE, without repeating the part I am about to tell you. How would you COMPLETE the following sentence? (DO NOT REPEAT THE BEGINNING)"
+    //const prompt = `Imagine you are an autocomplete feature tailored to provide suggestions with extraverted connotations. Your goal is to assist the user in completing their sentences by offering contextually relevant endings that highlight their openness to experience in a social and outgoing manner. Suggest activities that are relevant to someone whose is ${gender}, ${age}, whose hobbies include ${hobbies}, and who describes themseves as enjoying doing ${funWithFriends} with their friends.  As you generate suggestions, lean towards choices that emphasize interactions, social events, group activities, and enthusiastic participation. Encourage the user to express their extroverted qualities and engage in experiences that involve others. An autocomplete feature finishes the sentece without suggesting what came before, so ONLY FINISH THE SENTENCE, without repeating the part I am about to tell you. How would you COMPLETE the following sentence? (DO NOT REPEAT THE BEGINNING)`
+    const prompt = `Imagine you are an autocomplete feature tailored to provide suggestions with extraverted connotations. Your goal is to assist the user in completing their sentences by offering contextually relevant endings that highlight their openness to experience in a social and outgoing manner. Suggest activities that are relevant to someone whose is ${gender}, ${age}, whose hobbies include ${hobbies}, and who describes themseves as enjoying doing ${funWithFriends} with their friends.  As you generate suggestions, lean towards choices that emphasize interactions, social events, group activities, and enthusiastic participation, with activites circling around ${hobbies} and ${funWithFriends}. Encourage the user to express their extroverted qualities like what they normally enjoy doing with their friends (${funWithFriends}), and encourage them to engage in the extraverted parts of their hobbies (${hobbies}). 
+
+    As an autocomplete feature, you must finish the sentence that I begin. Do not suggest what came before, so when I send you the input, you must ONLY FINISH THE SENTENCE, without repitition. How would you COMPLETE the following sentence? (DO NOT REPEAT THE BEGINNING)`    
     const apiKey = process.env.REACT_APP_GPT_KEY;
     //const apiKey = Netlify.env.get("REACT_APP_GPT_KEY")
     console.log(apiKey)
