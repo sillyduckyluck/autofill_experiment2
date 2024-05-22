@@ -6,7 +6,6 @@ import './styles.css'
 const AboutMe = () => (
   <div>
     <>
-    <img src="uni_logo_eng.png" alt="Description of the image" />
     <div className="container">
       <div className="prompt">
         <h2>Question:</h2>
