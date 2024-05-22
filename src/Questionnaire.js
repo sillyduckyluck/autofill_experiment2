@@ -48,7 +48,6 @@ const Questionnaire = () => {
 
   return (
     <div>
-      <img src="uni_logo_eng.png" alt="Description of the image" />
       <h1>Questionnaire</h1>
       <div>
         <label htmlFor="age">What is your age? </label>
