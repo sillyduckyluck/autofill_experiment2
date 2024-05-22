@@ -61,3 +61,15 @@ h2 {
   display: ${({ suggestions }) => (suggestions.length > 0 ? 'block' : 'none')};
 }
 */
+
+.autocomplete-suggestion {
+  padding-top: 10px;
+}
+
+.autocomplete-suggestion2 {
+  padding-top: 10px;
+}
+
+.autocomplete-suggestion3 {
+  padding-top: 10px;
+}
